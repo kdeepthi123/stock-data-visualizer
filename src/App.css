@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  padding:3vw
+  padding:1vw
 }
 
 .App-logo {
@@ -15,16 +15,32 @@
 }
 
 .App-header {
-  background-color: rgb(38, 36, 36);
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
   
 
+}
+.header-content {
+  display: flex;
+  align-items: flex-start; /* Center items vertically */
+  justify-content: space-between; /* Add space between the items */
+  width: 100%; /* Take full width to allow for spacing on either end */
+}
+
+.App-header h1 {
+  margin: 0; /* Remove default margin */
+  flex-grow: 0; /* Allow the title to grow and push the search component to the edge */
+}
+.App-header canvas{
+border: 0.5px solid rgb(75, 74, 74);
+border-radius: 18px;
+padding: 2vw;
 }
 
 .App-link {

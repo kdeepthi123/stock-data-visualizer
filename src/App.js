@@ -12,8 +12,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Stock Data Visualizer</h1>
-        <SearchComponent setSelectedSymbol={setSelectedSymbol} />
+      <div className="header-content">
+          <h1>Stock Data Visualizer</h1>
+          <SearchComponent setSelectedSymbol={setSelectedSymbol} />
+        </div>
         {selectedSymbol && (
           <FinancialChart symbol={selectedSymbol.symbol} name={selectedSymbol.name} />
         )}
