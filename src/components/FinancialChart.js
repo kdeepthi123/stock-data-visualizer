@@ -33,9 +33,23 @@ const FinancialChart = ({ symbol }) => {
   const [companyInfo, setCompanyInfo] = useState({ name: '', ipoDate: '' });
 
   useEffect(() => {
+    //Code Snippet for API Key - Update API Before Execution
+
+    //const apiKey = 'GT3947HMN7K7W50S';
+
     const fetchData = async () => {
+
+      //Code Snippet for 1 statis symbol -  IBM
+
       const incomeResponse = await loadIncome();
       const balanceResponse = await loadBalances();
+
+      //Code Snippet for Dynamic Symbols for API
+
+      // const incomeResponseAPI = await fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbol}&apikey=${apiKey}`);
+      // const balanceResponseAPI= await fetch(`https://www.alphavantage.co/query?function=BALANCE_SHEET&symbol=${symbol}&apikey=${apiKey}`);
+      // const incomeResponse = incomeResponseAPI.json()
+      // const balanceResponse = balanceResponseAPI.json()
 
       const netIncome = incomeResponse.quarterlyReports.map(item => parseFloat(item.netIncome));
       const totalRevenue = incomeResponse.quarterlyReports.map(item => parseFloat(item.totalRevenue));
@@ -97,16 +111,16 @@ const FinancialChart = ({ symbol }) => {
         position: 'top',
         align: 'start',
         padding: {
-          top: 10,
-          bottom: 30 // Adjust padding to ensure the title fits and is visible
+          top: 0,
+          bottom: 10 // Adjust padding to ensure the title fits and is visible
         },
         font: {
           size: 16 // Adjust font size as needed
         }
       },
-      // ... (other plugins configurations)
+     
     },
-    // ... (other chart configurations)
+    
   };
   
   
