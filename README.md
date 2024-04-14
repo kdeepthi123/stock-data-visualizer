@@ -15,6 +15,9 @@ This project is a web application built with React that visualizes financial dat
 
 A live demo of the Stock Data Visualizer is available [here](https://main--endearing-pika-406e83.netlify.app/).
 
+[![Stock Data Visualizer](./public/snapshot.png)](https://main--endearing-pika-406e83.netlify.app/)
+
+
 This demo is hosted on Netlify and reflects the latest state of the master/main branch.
 
 
