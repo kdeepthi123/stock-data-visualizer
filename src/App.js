@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import SearchComponent from './components/SearchForm';
 import FinancialChart from './components/FinancialChart';
+import OrientationPrompt from './components/OrientationPrompt';
 
 function App() {
   const [selectedSymbol, setSelectedSymbol] = useState({
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <div className="App">
+      <OrientationPrompt />
       <header className="App-header">
       <div className="header-content">
           <h1>Stock Data Visualizer</h1>

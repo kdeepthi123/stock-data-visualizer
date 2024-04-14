@@ -97,7 +97,9 @@ const FinancialChart = ({ symbol }) => {
   }, [symbol]);
 
   const options = {
-    // ... (other options configurations)
+    
+    responsive: true, // Chart.js will resize in response to changes in canvas size
+    //maintainAspectRatio: false,
     plugins: {
       title: {
         display: true,
