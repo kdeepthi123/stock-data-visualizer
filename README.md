@@ -11,6 +11,13 @@ This project is a web application built with React that visualizes financial dat
 - Dynamic chart title showing the selected company's name, symbol, and IPO date.
 - Chart scales based on selected time intervals.
 
+## Live Demo
+
+A live demo of the Stock Data Visualizer is available [here](https://main--endearing-pika-406e83.netlify.app/).
+
+This demo is hosted on Netlify and reflects the latest state of the master/main branch.
+
+
 ## Installation
 
 To get started with this project, follow these steps:
@@ -44,9 +51,34 @@ API Keys
 
 This project requires an API key from Alpha Vantage. You can obtain a free API key from Alpha Vantage.
 
+
+
+## Data Fetching Configuration
+
+This project supports both static and dynamic data fetching for financial charts:
+
+### Static Data for IBM
+
+By default, the application is set to load static data for IBM's financials. This is useful for development purposes when you want to avoid making API calls.
+
+The static data fetching is implemented in the `loadIncome` and `loadBalances` functions within the `FinancialChart.js` component. To use the static data, ensure the following code is uncommented out:
+
+```javascript
+const incomeResponse = await loadIncome();
+const balanceResponse = await loadBalances();
+```
+For dynamic data fetching based on user-selected symbols, you need to provide an API key from Alpha Vantage and uncomment the relevant lines in FinancialChart.js.
+
 After getting your API key, you need to set it in the FinancialChart.js component:
 
-```bash
+```javascript
 const apiKey = 'YOUR_ALPHA_VANTAGE_API_KEY';
 Replace 'YOUR_ALPHA_VANTAGE_API_KEY' with the actual key you obtained
+```
+
+```javascript
+const incomeResponseAPI = await fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbol}&apikey=${apiKey}`);
+const balanceResponseAPI= await fetch(`https://www.alphavantage.co/query?function=BALANCE_SHEET&symbol=${symbol}&apikey=${apiKey}`);
+const incomeResponse = await incomeResponseAPI.json();
+const balanceResponse = await balanceResponseAPI.json();
 ```
