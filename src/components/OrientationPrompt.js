@@ -3,7 +3,7 @@ import '../../src/OrientationPrompt.css'; // This is where you would import your
 
 const OrientationPrompt = () => {
   const [isLandscape, setIsLandscape] = useState(window.innerWidth > window.innerHeight);
-
+//update
   useEffect(() => {
     const handleResize = () => {
       setIsLandscape(window.innerWidth > window.innerHeight);
